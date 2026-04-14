@@ -127,7 +127,7 @@ print_result() {
     printf "${BOLD}  ━━━━━━━━━━━━━━━━━━━━━━${RESET}\n"
     printf "${GREEN}${BOLD}  安装成功！${RESET}\n\n"
     printf "  接下来：\n"
-    printf "  1. 在项目目录启动 Claude Code / Ducc\n"
+    printf "  1. 在项目目录启动 Claude Code\n"
     printf "  2. Skill 和 Rule 将自动加载\n"
     printf "  3. 尝试发送「反诈检查」测试\n\n"
     printf "  手动触发关键词：\n"

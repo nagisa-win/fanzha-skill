@@ -95,7 +95,7 @@ function Print-Result {
     Write-Host "  安装成功！" -ForegroundColor Green
     Write-Host ""
     Write-Host "  接下来："
-    Write-Host "  1. 在项目目录启动 Claude Code / Ducc"
+    Write-Host "  1. 在项目目录启动 Claude Code"
     Write-Host "  2. Skill 和 Rule 将自动加载"
     Write-Host "  3. 尝试发送「反诈检查」测试"
     Write-Host ""

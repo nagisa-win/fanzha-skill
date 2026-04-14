@@ -2,14 +2,14 @@
 
 <img src="docs/banner.svg" alt="反诈守护 Skill" width="640">
 
-**AI 反诈守护助手 — 为 Claude Code / Ducc 注入安全感知能力**
+**AI 反诈守护助手 — 为 Claude Code 注入安全感知能力**
 
 持续监控对话中的 AI 幻觉、异常网络信息、诈骗风险，主动预警并引导求助
 
 <br>
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Platform](https://img.shields.io/badge/Platform-Claude%20Code%20%7C%20Ducc-6e40c9?logo=claude&logoColor=white)](https://github.com/nagisa-win/fanzha-skill)
+[![Platform](https://img.shields.io/badge/Platform-Claude%20Code-6e40c9?logo=claude&logoColor=white)](https://github.com/nagisa-win/fanzha-skill)
 [![Stars](https://img.shields.io/github/stars/nagisa-win/fanzha-skill?style=social)](https://github.com/nagisa-win/fanzha-skill/stargazers)
 [![Forks](https://img.shields.io/github/forks/nagisa-win/fanzha-skill?style=social)](https://github.com/nagisa-win/fanzha-skill/forks)
 [![Language](https://img.shields.io/badge/%E8%AF%AD%E8%A8%80-%E4%B8%AD%E6%96%87-red)]()
@@ -134,6 +134,17 @@ fanzha-skill/
 
 ## 安装
 
+> **⚠️ 重要：Rule 和 Skill 必须同时安装，缺一不可！**
+>
+> 本项目采用 Rule + Skill 两层设计：
+> - **Rule**（`rules/反诈-guard.md`）负责每次回复前的轻量扫描和 L1/L2 响应
+> - **Skill**（`skills/反诈/`）负责 L3 高危时的完整深度处置
+>
+> 如果只安装 Skill 而不安装 Rule，日常对话中将不会触发自动扫描和预警；
+> 如果只安装 Rule 而不安装 Skill，L3 高危场景将无法获得完整的深度处置。
+>
+> 以下安装方式均已包含 Rule 和 Skill，无需额外操作。
+
 ### 一键安装（推荐）
 
 <table>
@@ -235,7 +246,7 @@ Skill 被自动加载后无需手动操作，在日常对话中自动生效：
 ```
 🚨🚨🚨 紧急安全警告 🚨🚨🚨
 
-dodo 检测到当前情境存在【高度诈骗风险】，请立即停止操作！
+反诈助手 检测到当前情境存在【高度诈骗风险】，请立即停止操作！
 
 🆘 如果你正在遭受诈骗，请立即：
   📞 拨打 110（报警）
