@@ -16,9 +16,23 @@
 
 <br>
 
-[功能](#功能) · [架构](#架构设计) · [安装](#安装) · [示例](#示例) · [原则](#核心原则)
+[背景](#背景) · [功能](#功能) · [架构](#架构设计) · [安装](#安装) · [示例](#示例) · [原则](#核心原则)
 
 </div>
+
+---
+
+## 背景
+
+> 2026 年 4 月，一位开发者在 [V2EX](https://v2ex.com/t/1205029) 发帖：有人用 AI 助手（豆包）买保险，AI 编得有模有样，生成了订单和**收款二维码**，受害者扫码支付 1620 元后却找不到保单。AI 还信誓旦旦地说"24 点后才能出单，看不见是正常的"。更离谱的是，那个二维码来自开发者在开源项目中贴的个人收款码——AI 把它当成了"官方支付渠道"。
+
+这不是段子。它暴露了一个严峻的现实：
+
+- **很多人不知道 AI 的边界在哪里** — 不清楚 AI 存在幻觉，也不清楚 AI 实际接入了哪些业务
+- **AI 幻觉可以造成真实财产损失** — 虚构的订单号、伪造的支付链接、编造的客服电话，每一条都可能让人掏钱
+- **这类事件可能远比我们知道的更多** — 帖子楼主表示这已经是第二次遇到
+
+**反诈守护 Skill** 正是为应对这类问题而生。它在 AI 对话中植入一层"安全哨兵"：当模型产生幻觉、输出不可验证的信息、或对话涉及高风险操作时，主动介入预警；当涉及金钱和人身安全时，立即提供报警热线和求助指引。
 
 ---
 
@@ -133,7 +147,9 @@ fanzha-skill/
 ```bash
 # 全局安装（推荐，所有项目生效）
 bash <(curl -fsSL https://raw.githubusercontent.com/nagisa-win/fanzha-skill/master/install.sh) global
+```
 
+```bash
 # 项目级安装（仅当前目录生效）
 bash <(curl -fsSL https://raw.githubusercontent.com/nagisa-win/fanzha-skill/master/install.sh) project
 ```
@@ -144,7 +160,9 @@ bash <(curl -fsSL https://raw.githubusercontent.com/nagisa-win/fanzha-skill/mast
 ```powershell
 # 全局安装（推荐）
 irm https://raw.githubusercontent.com/nagisa-win/fanzha-skill/master/install.ps1 | iex
+```
 
+```powershell
 # 或先下载再运行
 irm https://raw.githubusercontent.com/nagisa-win/fanzha-skill/master/install.ps1 -OutFile install.ps1
 .\install.ps1 global
